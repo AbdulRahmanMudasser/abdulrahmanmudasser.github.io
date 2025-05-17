@@ -99,7 +99,8 @@
     </div>
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
   </section>
-  <section id="experience" style="height: 120vh;">
+
+  <section id="experience" style="height: 105vh;">
     <p class="section__text__p1">Explore My</p>
     <h1 class="title">Experience</h1>
     <div class="experience-details-container">
@@ -199,7 +200,7 @@
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>Java</h3>
+                <h3>FastAPI</h3>
                 <p style="visibility: hidden;">Intermediate</p>
               </div>
             </article>
@@ -277,55 +278,396 @@
     </div>
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
   </section>
-  <section id="projects">
+
+
+  <section id="projects" style="height: 240vh;">
     <p class="section__text__p1">Browse My Recent</p>
     <h1 class="title">Projects</h1>
     <div class="experience-details-container">
       <div class="about-containers">
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
+
+        <!-- AgroSmart -->
+        <div class="project-card">
+          <h2 class="project-title">AgroSmart: Fertilizer, Spray Advisor & MarketPlace</h2>
+
+          <div class="project-description">
+            Built with <b>Django</b>, <b>Python</b>, and <b>Deep Learning</b>, this app identifies crops and diseases,
+            recommends fertilizer and spray, and includes a smart agro marketplace.
           </div>
-          <h2 class="experience-sub-title project-title">Project One</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
               Github
             </button>
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
               Live Demo
             </button>
           </div>
         </div>
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/project-2.png" alt="Project 2" class="project-img" />
+
+        <!-- Lesson Summarizer -->
+        <div class="project-card">
+          <h2 class="project-title">Lesson Summarizer</h2>
+
+          <div class="project-description">
+            Built with <b>Flutter</b>, <b>Dart</b>, <b>Firebase</b>, and <b>Machine Learning</b>, this app turns long
+            lessons into short summaries
+            and lets users ask questions based on the content.
           </div>
-          <h2 class="experience-sub-title project-title">Project Two</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
               Github
             </button>
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
               Live Demo
             </button>
           </div>
         </div>
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/project-3.png" alt="Project 3" class="project-img" />
+
+        <!-- Trip Planner -->
+        <div class="project-card">
+          <h2 class="project-title">Trip Planner</h2>
+
+          <div class="project-description">
+            Built with <b>React</b>, <b>Vite</b>, and <b>Deep Learning</b>, this app helps users plan perfect,
+            budget-friendly trips with
+            personalized places, routes, and activities based on interests.
           </div>
-          <h2 class="experience-sub-title project-title">Project Three</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
               Github
             </button>
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
               Live Demo
             </button>
           </div>
         </div>
+
       </div>
     </div>
+
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <!-- POP & ROLL: Beverages -->
+        <div class="project-card">
+          <h2 class="project-title">POP & ROLL: Beverages</h2>
+
+          <div class="project-description">
+            Built with <b>THREE.js</b>, <b>GSAP</b>, <b>Blender</b>, and <b>CorelDRAW</b>, this app showcases beverages
+            with 
+            stunning 3D visuals, smooth animations, and creative brand design.
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- GreatKart: E Commerce MarketPlace -->
+        <div class="project-card">
+          <h2 class="project-title">GreatKart</h2>
+
+          <div class="project-description">
+            Built with <b>Django</b> and <b>Python</b>, this e-commerce marketplace features product listings, secure
+            checkout, and an admin panel for managing users, roles, and orders.
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- CRM -->
+        <div class="project-card">
+          <h2 class="project-title">CRM</h2>
+
+          <div class="project-description">
+            Built with <b>Django</b> and <b>Python</b>, this complex CRM manages customer data, tracks interactions, and
+            improves business relationships with powerful, user-friendly tools.
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <!-- EduTrack -->
+        <div class="project-card">
+          <h2 class="project-title">EduTrack</h2>
+
+          <div class="project-description">
+            Built with <b>Flutter</b>, <b>GetX</b>, and <b>DRF</b>, this app manages students
+            efficiently, available on iOS and Android for seamless education tracking and user friendly.
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- Tune Finder -->
+        <div class="project-card">
+          <h2 class="project-title">Tune Finder</h2>
+
+          <div class="project-description">
+            Built with <b>Flutter</b>, <b>Riverpod</b>, <b>ArcCloud</b>, and <b>Firebase</b>, this app helps users find
+            music tunes easily on iOS, Android, and web platforms.
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- LingoGem -->
+        <div class="project-card">
+          <h2 class="project-title">LingoGem</h2>
+
+          <div class="project-description">
+            Built with <b>Flutter</b>, <b>Google Gemini</b>, and <b>Firebase</b>, this app helps users translate
+            languages
+            easily on iOS, Android, and web with smart features.
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <!-- POSales -->
+        <div class="project-card">
+          <h2 class="project-title">POSales</h2>
+
+          <div class="project-description">
+            Built with <b>C#</b>, <b>SQL Server</b>, and <b>Visual Basic</b>, this app manages point-of-sale and
+            inventory efficiently for smooth business operations.
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- FashioNext -->
+        <div class="project-card">
+          <h2 class="project-title">FashioNext</h2>
+
+          <div class="project-description">
+            Built with <b>Flutter</b>, <b>Hooks</b>, <b>Django</b>, and <b>Django REST Framework</b>, this fashion
+            e-commerce app offers a smooth shopping experience on mobile.
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- Spotiflyer -->
+        <div class="project-card">
+          <h2 class="project-title">Spotiflyer</h2>
+
+          <div class="project-description">
+            Built with <b>Flutter</b>, <b>FastAPI</b>, <b>RiverPod</b>, <b>JWT</b>, and <b>Cloudinary</b>, this music
+            app streams songs smoothly on iOS and Android devices.
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <!-- Body Metric -->
+        <div class="project-card">
+          <h2 class="project-title">Body Metric</h2>
+
+          <div class="project-description">
+            Built with <b>Flutter</b>, <b>GetX</b>, and <b>Rx Shared Preferences</b>, this app calculates Body Mass
+            Index quickly and tracks health data easily on mobile devices.
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- Metatube -->
+        <div class="project-card">
+          <h2 class="project-title">Metatube</h2>
+
+          <div class="project-description">
+            Built with <b>Flutter</b>, <b>Riverpod</b>, and <b>Node.js</b>, this tool extracts YouTube video metadata
+            easily, available for Windows, Linux, and macOS platforms.
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- SplitEasy -->
+        <div class="project-card">
+          <h2 class="project-title">SplitEasy</h2>
+
+          <div class="project-description">
+            Built with <b>Flutter</b>, <b>GetX</b>, and <b>Shared Preferences</b>, this app splits bills easily and
+            fairly for groups on both iOS and Android devices
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <!-- NeuroCare Hub -->
+        <div class="project-card">
+          <h2 class="project-title">NeuroCare Hub</h2>
+
+          <div class="project-description">
+            Built with <b>Flutter</b>, <b>Bloc</b>, and <b>Machine Learning</b>, this app detects tumors early, helping
+            users monitor brain health on mobile devices.
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- SkyCast -->
+        <div class="project-card">
+          <h2 class="project-title">SkyCast</h2>
+
+          <div class="project-description">
+            Built with <b>Flutter</b>, <b>Riverpod</b>, and <b>Shared Preferences</b>, this weather app delivers
+            accurate forecasts and personalized updates on iOS and Android devices.
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- WhatsApp Helper Tool -->
+        <div class="project-card">
+          <h2 class="project-title">WhatsApp Helper Tool</h2>
+
+          <div class="project-description">
+            Built with <b>Flutter</b>, <b>GetX</b>, and <b>Shared Preferences</b>, this app saves WhatsApp statuses,
+            downloads images and videos, and enables easy sharing with friends.
+
+          </div>
+
+          <div class="project-actions">
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="project-btn" disabled onclick="location.href='https://github.com/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
   </section>
   <section id="contact">
