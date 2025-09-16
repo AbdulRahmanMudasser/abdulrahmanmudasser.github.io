@@ -27,7 +27,7 @@
   <nav id="hamburger-nav">
     <div class="logo">Abdul Rahman</div>
     <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
+      <div class="hamburger-icon" onclick="toggleMenu()" onkeydown="handleHamburgerKeydown(event)">
         <span></span>
         <span></span>
         <span></span>
@@ -326,10 +326,10 @@
           </div>
         </div>
 
-        <div class="modal" id="projectModalTrektoo">
+        <div class="modal" id="projectModalTrektoo" role="dialog" aria-labelledby="trektoo-title" aria-modal="true">
           <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('projectModalTrektoo')">×</button>
-            <h2 class="modal-title">Trektoo - Tour App</h2>
+            <button class="modal-close" onclick="closeModal('projectModalTrektoo')" aria-label="Close Trektoo project modal">×</button>
+            <h2 class="modal-title" id="trektoo-title">Trektoo - Tour App</h2>
             <div class="modal-image-container">
               <img src="projects/trektoo.png" alt="Trektoo App Screenshot" class="project-image">
             </div>
@@ -381,10 +381,10 @@
             </button>
           </div>
         </div>
-        <div class="modal" id="projectModalNexlify">
+        <div class="modal" id="projectModalNexlify" role="dialog" aria-labelledby="nexlify-title" aria-modal="true">
           <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('projectModalNexlify')">×</button>
-            <h2 class="modal-title">Nexlify SaaS</h2>
+            <button class="modal-close" onclick="closeModal('projectModalNexlify')" aria-label="Close Nexlify SaaS project modal">×</button>
+            <h2 class="modal-title" id="nexlify-title">Nexlify SaaS</h2>
             <div class="modal-image-container">
               <div class="project-image-placeholder">
                 Project Is Confidential & Cannot Be Showcased
@@ -434,10 +434,10 @@
             </button>
           </div>
         </div>
-        <div class="modal" id="projectModalBrewHub">
+        <div class="modal" id="projectModalBrewHub" role="dialog" aria-labelledby="brewhub-title" aria-modal="true">
           <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('projectModalBrewHub')">×</button>
-            <h2 class="modal-title">BrewHub</h2>
+            <button class="modal-close" onclick="closeModal('projectModalBrewHub')" aria-label="Close BrewHub project modal">×</button>
+            <h2 class="modal-title" id="brewhub-title">BrewHub</h2>
             <div class="modal-image-container">
               <div class="project-image-container">
                 <img src="projects/bean-and-brew.jpeg" alt="Bean & Brew Image" class="project-image">
