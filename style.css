@@ -136,14 +136,7 @@ a:hover {
 
 .hamburger-icon span:first-child {
   transform: none;
-}
-
-.hamburger-icon span:first-child {
   opacity: 1;
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
 }
 
 /* SECTIONS */
@@ -257,9 +250,6 @@ section {
   border: rgb(255, 255, 255) 0.1rem solid;
 }
 
-.btn-container {
-  gap: 1rem;
-}
 
 /* ABOUT SECTION */
 
@@ -318,6 +308,8 @@ section {
 
 #experience {
   position: relative;
+  min-height: fit-content;
+  height: auto;
 }
 
 .experience-sub-title {
@@ -357,6 +349,8 @@ article .icon {
 
 #projects {
   position: relative;
+  min-height: fit-content;
+  height: auto;
 }
 
 /* Project Section Styles */
@@ -563,7 +557,7 @@ article .icon {
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
+  background: rgb(250, 250, 250);
   margin: 2rem auto;
   padding: 0.5rem;
 }
