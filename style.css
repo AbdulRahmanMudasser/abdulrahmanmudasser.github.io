@@ -1870,7 +1870,7 @@ footer p {
 
 .timeline-container {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 3rem auto 0 auto;
   padding: 0 2rem;
 }
 
@@ -2048,7 +2048,7 @@ footer p {
 
 .leadership-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 3rem auto 0 auto;
   padding: 0 2rem;
 }
 
