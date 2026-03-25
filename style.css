@@ -1038,7 +1038,7 @@ section {
   margin-top: 1rem;
   max-width: 100%;
   padding: 0 1rem;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* All tabs now use the same container sizing as frontend/backend */
@@ -1072,8 +1072,7 @@ section {
   padding: 2rem 1rem;
   background: white;
   border-radius: 1.5rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
+  border: 1px solid rgb(163, 163, 163);
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   text-align: center;
@@ -1083,7 +1082,7 @@ section {
 .skill-item:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  border-color: #007bff;
+  border-color: rgb(53, 53, 53);
 }
 
 .skill-icon {
@@ -1091,14 +1090,17 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 3rem;
-  width: 3rem;
+  height: 3.5rem;
+  width: 100%;
+  max-width: 5rem;
 }
 
 .skill-icon img,
 .skill-icon svg {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   filter: grayscale(0);
   transition: all 0.3s ease;
@@ -1107,7 +1109,7 @@ section {
 .skill-item:hover .skill-icon img,
 .skill-item:hover .skill-icon svg {
   filter: grayscale(0);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .skill-item span {
@@ -1122,17 +1124,17 @@ section {
   .skill-item span {
     font-size: 1rem;
   }
-  
+
   .skill-icon {
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 4rem;
+    max-width: 6rem;
   }
 }
 
 @media (min-width: 768px) {
   .skill-icon {
-    height: 4rem;
-    width: 4rem;
+    height: 4.5rem;
+    max-width: 7rem;
   }
 }
 
@@ -1513,109 +1515,188 @@ section {
   margin: 0.5rem 0;
 }
 
-/* CONTACT */
+/* CONTACT - Modern Redesign */
 
 #contact {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  min-height: 70vh;
+  padding: 2rem 0;
 }
 
-.contact-info-upper-container {
+/* Contact Card */
+.contact-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 1.5rem;
+  border: 1px solid rgb(220, 220, 220);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0;
+  width: 90%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Contact Methods */
+.contact-methods {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  border-radius: 2rem;
-  border: rgb(163, 163, 163) 0.1rem solid;
-  background: rgb(250, 250, 250);
-  margin: 2rem auto;
-  padding: 2rem 1.5rem;
-  max-width: 800px;
-  min-height: 80px;
+  gap: 1rem;
+  padding: 2rem;
+  background: white;
 }
 
 @media (min-width: 768px) {
-  .contact-info-upper-container {
+  .contact-methods {
     flex-direction: row;
-    gap: 2.5rem;
-    padding: 1.5rem 2rem;
+    padding: 2.5rem 3rem;
   }
 }
 
-.contact-info-container {
+.contact-method-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin: 0;
-  padding: 0.5rem;
-  height: 100%;
-  width: 100%;
-}
-
-.contact-info-container p {
-  font-size: 0.9rem;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  word-break: break-word;
-  max-width: 100%;
-}
-
-.contact-info-container p a {
-  color: inherit;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: #f8f9fa;
   text-decoration: none;
-  transition: color 0.3s ease;
+  color: inherit;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
 }
 
-.contact-info-container p a:hover {
-  color: #007bff;
-}
-
-@media (min-width: 375px) {
-  .contact-info-container p {
-    font-size: 0.95rem;
-  }
-}
-
-@media (min-width: 480px) {
-  .contact-info-container p {
-    font-size: 1rem;
-  }
+.contact-method-item:hover {
+  background: #ffffff;
+  border-color: rgb(220, 220, 220);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+  text-decoration: none;
 }
 
 @media (min-width: 768px) {
-  .contact-info-container p {
-    font-size: larger;
-    text-align: left;
+  .contact-method-item {
+    flex: 1;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
   }
 }
 
 .contact-icon {
-  cursor: default;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
   flex-shrink: 0;
-}
-
-.email-icon {
-  height: 2rem;
-}
-
-@media (min-width: 480px) {
-  .email-icon {
-    height: 2.25rem;
-  }
+  display: block;
 }
 
 @media (min-width: 768px) {
-  .email-icon {
-    height: 2.5rem;
+  .contact-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+.email-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.contact-method-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .contact-method-info {
+    margin-top: 1rem;
+  }
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #666;
+}
+
+@media (min-width: 768px) {
+  .contact-label {
+    font-size: 0.8rem;
+  }
+}
+
+.contact-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #353535;
+  word-break: break-word;
+  transition: color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .contact-value {
+    font-size: 0.95rem;
+  }
+}
+
+.contact-method-item:hover .contact-value {
+  color: #353535;
+}
+
+/* Card Footer */
+.contact-card-footer {
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f0f0f0 100%);
+  border-top: 0.1rem solid rgb(230, 230, 230);
+  text-align: center;
+}
+
+.contact-card-footer p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 1rem 0;
+}
+
+.availability-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #e8f5e9;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #2e7d32;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4caf50;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
   }
 }
 
@@ -1746,6 +1827,355 @@ footer p {
   }
 
   footer p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ==========================================================================
+   WORK EXPERIENCE TIMELINE SECTION
+   ========================================================================== */
+
+#work-experience {
+  padding: 5rem 10rem;
+  background-color: #fff; /* White background to alternate with sections */
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 575px) {
+  #work-experience {
+    padding: 3rem 0.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  #work-experience {
+    padding: 3rem 1rem;
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  #work-experience {
+    padding: 4rem 2rem;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  #work-experience {
+    padding: 4.5rem 3rem;
+  }
+}
+
+.timeline-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #353535, #1a1a1a);
+  border-radius: 3px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -3rem;
+  top: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: linear-gradient(135deg, #353535, #1a1a1a);
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(53, 53, 53, 0.2);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.timeline-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #fff;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-header h3 {
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  margin: 0;
+}
+
+.timeline-date {
+  font-size: 0.875rem;
+  color: #6c757d;
+  background: #f1f3f4;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.timeline-role {
+  display: block;
+  font-size: 1rem;
+  color: #353535;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.timeline-responsibilities {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-responsibilities li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #495057;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.timeline-responsibilities li::before {
+  content: '•' !important;
+  position: absolute !important;
+  left: 0 !important;
+  color: #353535 !important;
+  font-weight: 600 !important;
+  font-size: 1.2rem !important;
+  line-height: 1.4 !important;
+  display: block !important;
+}
+
+.timeline-responsibilities li:last-child {
+  margin-bottom: 0;
+}
+
+/* Override global list reset for timeline */
+.timeline-responsibilities,
+.timeline-responsibilities li {
+  list-style: none !important;
+}
+
+/* ==========================================================================
+   LEADERSHIP & INVOLVEMENT SECTION
+   ========================================================================== */
+
+#leadership {
+  padding: 5rem 10rem;
+  background-color: #f5f5f5; /* Alternating section background */
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 575px) {
+  #leadership {
+    padding: 3rem 0.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  #leadership {
+    padding: 3rem 1rem;
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  #leadership {
+    padding: 4rem 2rem;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  #leadership {
+    padding: 4.5rem 3rem;
+  }
+}
+
+.leadership-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.leadership-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.leadership-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.leadership-card h3 {
+  font-size: 1.15rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.leadership-company {
+  display: block;
+  font-size: 0.9rem;
+  color: #007bff;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.leadership-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE STYLES FOR TIMELINE & LEADERSHIP
+   ========================================================================== */
+
+@media screen and (max-width: 991px) {
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #work-experience {
+    padding: 3rem 0;
+  }
+
+  .timeline-container,
+  .leadership-container {
+    padding: 0 1rem;
+  }
+
+  .timeline {
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    left: 0;
+  }
+
+  .timeline-dot {
+    left: -2rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .timeline-content {
+    padding: 1.25rem;
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .leadership-card {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .timeline-content::before {
+    display: none;
+  }
+
+  .timeline-role,
+  .timeline-date {
+    font-size: 0.85rem;
+  }
+
+  .timeline-responsibilities li {
+    font-size: 0.875rem;
+  }
+
+  .leadership-card h3 {
+    font-size: 1rem;
+  }
+
+  .leadership-company {
+    font-size: 0.85rem;
+  }
+
+  .leadership-card p {
     font-size: 0.85rem;
   }
 }
