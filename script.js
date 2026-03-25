@@ -100,28 +100,102 @@ class PortfolioApp {
     // Project data with all the projects
     this.projects = [
       {
+        id: 'ai-business-publisher',
+        title: 'AI Business Publisher: Business Profile Optimization Platform',
+        tags: ['React', 'Express', 'PostgreSQL'],
+        image: null,
+        description: 'Web platform built with React, Express, and PostgreSQL for AI assistant visibility management. Implements Google Places API integration, multi-stage website scraping with Playwright, GPT-4o content enhancement, schema.org JSON-LD structured data publishing, EEAT crawlability scoring, and Stripe pay-per-profile payments.',
+        status: 'Completed',
+        lastUpdated: 'Recent',
+        githubUrl: null,
+        liveUrl: null,
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
+      },
+      {
+        id: 'automated-social-media',
+        title: 'Automated Social Media Platform',
+        tags: ['NestJS', 'Next.js', 'PostgreSQL'],
+        image: null,
+        description: 'Web platform built with NestJS, Next.js, and PostgreSQL for dealership social media management. Implements OAuth integration with Google/Facebook Business, automated review syndication, branded template engine, Bull Queue scheduling, and multi-franchise analytics dashboard.',
+        status: 'Completed',
+        lastUpdated: 'Recent',
+        githubUrl: null,
+        liveUrl: null,
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
+      },
+      {
+        id: 'battery-electrode-detection',
+        title: 'Battery Electrode Wrinkle Detection System',
+        tags: ['Python', 'CustomTkinter', 'OpenCV', 'scikit-image'],
+        image: null,
+        description: 'Industrial quality control system developed using Python, CustomTkinter, OpenCV, and scikit-image for battery electrode manufacturing. Performs real-time defect detection using laser sensors and computer vision with multi-algorithm wrinkle detection and OPC-UA industrial integration to optimize production quality control.',
+        status: 'Completed',
+        lastUpdated: 'Recent',
+        githubUrl: null,
+        liveUrl: null,
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
+      },
+      {
+        id: 'maqbool-fashion',
+        title: 'Maqbool Fashion & Fabrics (ERP, Point of Sale)',
+        tags: ['Django', 'Flutter', 'PostgreSQL'],
+        image: null,
+        description: 'Developed using Django, Flutter, and PostgreSQL, Maqbool Fashion is a point-of-sale, accounting, and personal management software for customizing bridal and groom dresses on demand. It features tailored order management, POS billing, financial tracking, customer records, and workflow tools to streamline dress customization and business operations.',
+        status: 'Completed',
+        lastUpdated: 'Recent',
+        githubUrl: null,
+        liveUrl: null,
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
+      },
+      {
+        id: 'domesta',
+        title: 'Domesta: Maid Hiring & Workforce Management System',
+        tags: ['Next.js'],
+        image: null,
+        description: 'Developed using Next.js, Domesta is a multi-role platform for hiring maids, and managing employees, employers, agencies, and superadmins. It features job matching, multi-dashboard access, verification workflows, booking systems, and admin oversight tools for workforce coordination.',
+        status: 'Completed',
+        lastUpdated: 'Recent',
+        githubUrl: null,
+        liveUrl: null,
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
+      },
+      {
         id: 'trektoo',
         title: 'Trektoo - Tour App',
-        tags: ['Next.js', 'Supabase', 'Stripe'],
+        tags: ['Next.js', 'Supabase'],
         image: 'projects/trektoo.png',
         description: 'Trektoo is a tour booking app, where users can search for tours, select and book hotels, and enjoy a streamlined travel experience. Built with Next.js, Supabase, and Stripe.',
         status: 'In Progress',
         lastUpdated: 'May 26, 2025',
         githubUrl: null,
         liveUrl: null,
-        hasImage: true
+        hasImage: true,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'nexlify',
         title: 'Nexlify SaaS',
-        tags: ['Next.js', 'Supabase', 'Stripe'],
+        tags: ['Next.js', 'Supabase'],
         image: null,
         description: 'Built with Next.js, Supabase, and Stripe, this SaaS platform enables users to access video lectures, select mentors, adjust learning at their own pace, and supports monetization for course creators.',
         status: 'In Progress',
         lastUpdated: 'May 26, 2025',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'brewhub',
@@ -133,7 +207,9 @@ class PortfolioApp {
         lastUpdated: 'May 27, 2025',
         githubUrl: null,
         liveUrl: 'https://brew-and-bean.rf.gd/index.php',
-        hasImage: true
+        hasImage: true,
+        showGithubButton: false,
+        showLiveButton: true
       },
       {
         id: 'agrosmart',
@@ -145,7 +221,9 @@ class PortfolioApp {
         lastUpdated: 'May 20, 2025',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'lesson-summarizer',
@@ -157,7 +235,9 @@ class PortfolioApp {
         lastUpdated: 'April 15, 2025',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'trip-planner',
@@ -169,7 +249,9 @@ class PortfolioApp {
         lastUpdated: 'March 10, 2025',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'pop-roll',
@@ -181,7 +263,9 @@ class PortfolioApp {
         lastUpdated: 'February 28, 2025',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'greatkart',
@@ -193,7 +277,9 @@ class PortfolioApp {
         lastUpdated: 'January 15, 2025',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'crm',
@@ -205,7 +291,9 @@ class PortfolioApp {
         lastUpdated: 'December 10, 2024',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'edutrack',
@@ -217,7 +305,9 @@ class PortfolioApp {
         lastUpdated: 'November 5, 2024',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'tune-finder',
@@ -229,7 +319,9 @@ class PortfolioApp {
         lastUpdated: 'October 20, 2024',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'lingogem',
@@ -241,7 +333,9 @@ class PortfolioApp {
         lastUpdated: 'September 15, 2024',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'posales',
@@ -253,7 +347,9 @@ class PortfolioApp {
         lastUpdated: 'August 10, 2024',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'fashionext',
@@ -265,7 +361,9 @@ class PortfolioApp {
         lastUpdated: 'July 5, 2024',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'spotiflyer',
@@ -277,7 +375,9 @@ class PortfolioApp {
         lastUpdated: 'June 20, 2024',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'body-metric',
@@ -289,7 +389,9 @@ class PortfolioApp {
         lastUpdated: 'May 15, 2023',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'metatube',
@@ -301,7 +403,9 @@ class PortfolioApp {
         lastUpdated: 'April 10, 2023',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'split-easy',
@@ -313,7 +417,9 @@ class PortfolioApp {
         lastUpdated: 'March 5, 2023',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'neurocare',
@@ -325,7 +431,9 @@ class PortfolioApp {
         lastUpdated: 'February 20, 2022',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'skycast',
@@ -337,7 +445,9 @@ class PortfolioApp {
         lastUpdated: 'January 15, 2022',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       },
       {
         id: 'whatsapp-helper',
@@ -349,7 +459,9 @@ class PortfolioApp {
         lastUpdated: 'December 10, 2022',
         githubUrl: null,
         liveUrl: null,
-        hasImage: false
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false
       }
     ];
 
@@ -391,26 +503,24 @@ class PortfolioApp {
     card.className = 'project-card';
     card.innerHTML = `
       <div class="project-image-container">
-        ${project.hasImage 
+        ${project.hasImage
           ? `<img src="${project.image}" alt="${project.title} screenshot" class="project-image" loading="lazy" />`
           : `<div class="project-image-placeholder">Project Is Confidential & Cannot Be Showcased</div>`
         }
       </div>
-      <h2 class="project-title">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="12" fill="#000" />
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z" fill="#fff" />
-        </svg>
-        ${project.title}
-      </h2>
+      <h2 class="project-title">${project.title}</h2>
       <div class="project-tags"><strong>Tags:</strong> <span>${project.tags.join(', ')}</span></div>
       <div class="project-actions">
+        ${project.showGithubButton ? `
         <button class="project-btn" ${project.githubUrl ? '' : 'disabled'} onclick="${project.githubUrl ? `location.href='${project.githubUrl}'` : ''}">
           Github
         </button>
+        ` : ''}
+        ${project.showLiveButton ? `
         <button class="project-btn" ${project.liveUrl ? '' : 'disabled'} onclick="${project.liveUrl ? `location.href='${project.liveUrl}'` : ''}">
           Live Demo
         </button>
+        ` : ''}
         <button class="project-btn" onclick="openModal('projectModal${project.id}')">
           View More
         </button>
@@ -444,12 +554,16 @@ class PortfolioApp {
           <p><strong>Project Status:</strong> ${project.status}</p>
         </div>
         <div class="project-actions">
+          ${project.showGithubButton ? `
           <button class="project-btn" ${project.githubUrl ? '' : 'disabled'} onclick="${project.githubUrl ? `location.href='${project.githubUrl}'` : ''}">
             Github
           </button>
+          ` : ''}
+          ${project.showLiveButton ? `
           <button class="project-btn" ${project.liveUrl ? '' : 'disabled'} onclick="${project.liveUrl ? `location.href='${project.liveUrl}'` : ''}">
             Live Demo
           </button>
+          ` : ''}
         </div>
       </div>
     `;
