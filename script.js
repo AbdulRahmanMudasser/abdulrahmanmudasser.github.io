@@ -2,8 +2,29 @@
 class PortfolioApp {
   constructor() {
     this.projects = [];
+    this.filteredProjects = [];
     this.currentPage = 1;
     this.projectsPerPage = 9;
+    this.activeFilter = 'all';
+    this.availableFilters = ['all', 'frontend', 'backend', 'mobile', 'database', 'ai-ml', 'other'];
+    this.filterMapping = {
+      'all': 'All Projects',
+      'frontend': ['React', 'Next.js', 'React Native', 'Vite', 'THREE.js', 'GSAP', 'Blender', 'CorelDRAW'],
+      'backend': ['Node.js', 'Django', 'Python', 'Express', 'NestJS', 'Laravel', 'PHP', 'DRF', 'FastAPI'],
+      'mobile': ['Flutter', 'React Native', 'Dart', 'Firebase', 'ArcCloud', 'JWT', 'Cloudinary', 'Shared Preferences', 'Rx Shared Preferences'],
+      'database': ['PostgreSQL', 'MySQL', 'Firebase', 'Supabase', 'SQL Server'],
+      'ai-ml': ['Machine Learning', 'Deep Learning', 'OpenCV', 'scikit-image', 'Google Gemini', 'CustomTkinter'],
+      'other': ['Go', 'C#', 'TypeScript', 'MCP', 'CLI', 'Visual Basic']
+    };
+    this.filterDisplayNames = {
+      'all': 'All Projects',
+      'frontend': 'Frontend',
+      'backend': 'Backend',
+      'mobile': 'Mobile',
+      'database': 'Database',
+      'ai-ml': 'AI/ML',
+      'other': 'Other'
+    };
     this.init();
   }
 
@@ -11,6 +32,7 @@ class PortfolioApp {
     this.setupEventListeners();
     this.initializeAccessibility();
     this.loadProjects();
+    this.initializeFiltering();
     this.initializePagination();
     this.initializeSkillsTabs();
   }
@@ -516,7 +538,7 @@ class PortfolioApp {
   renderProjects() {
     const projectGrid = document.getElementById('projectGrid');
     const modalsContainer = document.getElementById('modalsContainer');
-    
+
     if (!projectGrid || !modalsContainer) {
       console.error('Project grid or modals container not found');
       return;
@@ -526,10 +548,16 @@ class PortfolioApp {
     projectGrid.innerHTML = '';
     modalsContainer.innerHTML = '';
 
+    // Handle no results state
+    if (this.filteredProjects.length === 0) {
+      this.renderNoResults();
+      return;
+    }
+
     // Calculate pagination
     const startIndex = (this.currentPage - 1) * this.projectsPerPage;
     const endIndex = startIndex + this.projectsPerPage;
-    const currentProjects = this.projects.slice(startIndex, endIndex);
+    const currentProjects = this.filteredProjects.slice(startIndex, endIndex);
 
     // Render projects
     currentProjects.forEach(project => {
@@ -541,6 +569,7 @@ class PortfolioApp {
     });
 
     this.updatePaginationInfo();
+    this.updateProjectCount();
   }
 
   createProjectCard(project) {
@@ -649,10 +678,17 @@ class PortfolioApp {
     const paginationInfo = document.getElementById('paginationInfo');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    
+
     if (paginationInfo) {
-      const totalPages = Math.ceil(this.projects.length / this.projectsPerPage);
-      paginationInfo.textContent = `Page ${this.currentPage} of ${totalPages}`;
+      const totalPages = Math.ceil(this.filteredProjects.length / this.projectsPerPage);
+      
+      if (this.filteredProjects.length === 0) {
+        paginationInfo.textContent = 'No results';
+      } else if (totalPages === 0) {
+        paginationInfo.textContent = `Page ${this.currentPage} of 1`;
+      } else {
+        paginationInfo.textContent = `Page ${this.currentPage} of ${totalPages}`;
+      }
     }
 
     if (prevBtn) {
@@ -660,8 +696,8 @@ class PortfolioApp {
     }
 
     if (nextBtn) {
-      const totalPages = Math.ceil(this.projects.length / this.projectsPerPage);
-      nextBtn.disabled = this.currentPage === totalPages;
+      const totalPages = Math.ceil(this.filteredProjects.length / this.projectsPerPage);
+      nextBtn.disabled = this.currentPage >= totalPages || this.filteredProjects.length === 0;
     }
   }
 
@@ -694,16 +730,127 @@ class PortfolioApp {
     tabButtons.forEach(button => {
       button.addEventListener('click', () => {
         const targetTab = button.getAttribute('data-tab');
-        
+
         // Remove active class from all buttons and contents
         tabButtons.forEach(btn => btn.classList.remove('active'));
         tabContents.forEach(content => content.classList.remove('active'));
-        
+
         // Add active class to clicked button and corresponding content
         button.classList.add('active');
         document.getElementById(targetTab).classList.add('active');
       });
     });
+  }
+
+  // ==========================================================================
+  // PROJECT FILTERING METHODS
+  // ==========================================================================
+
+  initializeFiltering() {
+    this.filteredProjects = [...this.projects];
+    this.renderFilterButtons();
+    this.updateProjectCount();
+    this.renderProjects();
+  }
+
+  renderFilterButtons() {
+    const filterContainer = document.getElementById('projectFilters');
+    if (!filterContainer) {
+      console.error('Filter container not found');
+      return;
+    }
+
+    filterContainer.innerHTML = '';
+
+    this.availableFilters.forEach(filterKey => {
+      const btn = document.createElement('button');
+      const isActive = filterKey === 'all';
+      
+      btn.className = 'filter-btn';
+      if (isActive) {
+        btn.classList.add('active');
+      }
+      btn.dataset.filter = filterKey;
+      btn.textContent = this.filterDisplayNames[filterKey];
+      btn.setAttribute('aria-pressed', isActive.toString());
+      btn.setAttribute('type', 'button');
+
+      btn.addEventListener('click', () => {
+        this.filterProjects(filterKey);
+      });
+
+      filterContainer.appendChild(btn);
+    });
+  }
+
+  filterProjects(tag) {
+    this.activeFilter = tag;
+    
+    if (tag === 'all') {
+      this.filteredProjects = [...this.projects];
+    } else {
+      const filterTags = this.filterMapping[tag] || [];
+      this.filteredProjects = this.projects.filter(project => {
+        return project.tags.some(projectTag => filterTags.includes(projectTag));
+      });
+    }
+    
+    this.resetPagination();
+    this.updateFilterUI(tag);
+    this.renderProjects();
+  }
+
+  resetPagination() {
+    this.currentPage = 1;
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    if (prevBtn) prevBtn.disabled = true;
+    
+    if (nextBtn) {
+      const totalPages = Math.ceil(this.filteredProjects.length / this.projectsPerPage);
+      nextBtn.disabled = this.filteredProjects.length === 0 || totalPages <= 1;
+    }
+  }
+
+  updateFilterUI(activeTag) {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+      const isActive = btn.dataset.filter === activeTag;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', isActive.toString());
+    });
+  }
+
+  renderNoResults() {
+    const projectGrid = document.getElementById('projectGrid');
+    const modalsContainer = document.getElementById('modalsContainer');
+    
+    if (!projectGrid) return;
+    
+    projectGrid.innerHTML = `
+      <div class="no-results" role="status">
+        <h3>No projects found</h3>
+        <p>Try selecting a different filter category.</p>
+      </div>
+    `;
+    
+    if (modalsContainer) modalsContainer.innerHTML = '';
+    
+    this.updatePaginationInfo();
+  }
+
+  updateProjectCount() {
+    const countElement = document.getElementById('projectCount');
+    if (countElement) {
+      const total = this.projects.length;
+      const showing = this.filteredProjects.length;
+      if (showing === total) {
+        countElement.textContent = `Showing all ${total} projects`;
+      } else {
+        countElement.textContent = `Showing ${showing} of ${total} projects`;
+      }
+    }
   }
 }
 
