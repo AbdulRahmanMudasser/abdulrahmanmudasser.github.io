@@ -100,6 +100,51 @@ class PortfolioApp {
     // Project data with all the projects
     this.projects = [
       {
+        id: 'trektoo-mobile',
+        title: 'TREKTOO - Mobile App',
+        tags: ['React Native'],
+        image: 'placeholder',
+        description: 'Trektoo is a tour booking app, where users can search for tours, select and book hotels, and enjoy a streamlined travel experience. Built with React Native and Stripe.',
+        status: 'In Progress',
+        lastUpdated: 'Recent',
+        githubUrl: null,
+        liveUrl: null,
+        hasImage: false,
+        showGithubButton: false,
+        showLiveButton: false,
+        placeholderText: 'Actively Working On This Project'
+      },
+      {
+        id: 'mcp-developer-ctx',
+        title: 'MCP Developer Context Server',
+        tags: ['TypeScript', 'Node.js', 'MCP'],
+        image: 'placeholder',
+        description: 'MCP Server that exposes project context, codebase search, safe commands, and API spec summaries for any model or MCP client. Features include codebase search with ignore support, project structure analysis, runnable commands detection, OpenAPI spec summarization, JSON validation, and MCP prompts for code review, API usage, and test planning.',
+        status: 'Completed',
+        lastUpdated: 'Recent',
+        githubUrl: 'https://github.com/AbdulRahmanMudasser/mcp-developer-ctx',
+        liveUrl: null,
+        hasImage: false,
+        showGithubButton: true,
+        showLiveButton: false,
+        placeholderText: 'No Snapshots For This Project'
+      },
+      {
+        id: 'cli-codebase-ctx',
+        title: 'CLI Codebase Context',
+        tags: ['Go', 'Ripgrep', 'CLI'],
+        image: 'placeholder',
+        description: 'Repo context and code search CLI for humans and agents. Built with Go 1.21+, featuring directory tree visualization, runnable commands detection, environment variable parsing, OpenAPI spec summarization, and ignore-aware codebase search using ripgrep or pure-Go fallback. Respects .gitignore and .codebase-ctxignore for reduced noise.',
+        status: 'Completed',
+        lastUpdated: 'Recent',
+        githubUrl: 'https://github.com/AbdulRahmanMudasser/cli-codebase-ctx',
+        liveUrl: null,
+        hasImage: false,
+        showGithubButton: true,
+        showLiveButton: false,
+        placeholderText: 'No Snapshots For This Project'
+      },
+      {
         id: 'ai-business-publisher',
         title: 'AI Business Publisher: Business Profile Optimization Platform',
         tags: ['React', 'Express', 'PostgreSQL'],
@@ -171,25 +216,25 @@ class PortfolioApp {
       },
       {
         id: 'trektoo',
-        title: 'Trektoo - Tour App',
-        tags: ['Next.js', 'Supabase'],
+        title: 'TREKTOO - Tour App',
+        tags: ['Next.js'],
         image: 'projects/trektoo.png',
-        description: 'Trektoo is a tour booking app, where users can search for tours, select and book hotels, and enjoy a streamlined travel experience. Built with Next.js, Supabase, and Stripe.',
-        status: 'In Progress',
+        description: 'Trektoo is a tour booking app, where users can search for tours, select and book hotels, and enjoy a streamlined travel experience. Built with Next.js and Stripe.',
+        status: 'Completed',
         lastUpdated: 'May 26, 2025',
         githubUrl: null,
-        liveUrl: null,
+        liveUrl: 'https://trektoo.com/',
         hasImage: true,
         showGithubButton: false,
-        showLiveButton: false
+        showLiveButton: true
       },
       {
         id: 'nexlify',
         title: 'Nexlify SaaS',
-        tags: ['Next.js', 'Supabase'],
+        tags: ['Next.js'],
         image: null,
-        description: 'Built with Next.js, Supabase, and Stripe, this SaaS platform enables users to access video lectures, select mentors, adjust learning at their own pace, and supports monetization for course creators.',
-        status: 'In Progress',
+        description: 'Built with Next.js and Stripe, this SaaS platform enables users to access video lectures, select mentors, adjust learning at their own pace, and supports monetization for course creators.',
+        status: 'Completed',
         lastUpdated: 'May 26, 2025',
         githubUrl: null,
         liveUrl: null,
@@ -505,7 +550,7 @@ class PortfolioApp {
       <div class="project-image-container">
         ${project.hasImage
           ? `<img src="${project.image}" alt="${project.title} screenshot" class="project-image" loading="lazy" />`
-          : `<div class="project-image-placeholder">Project Is Confidential & Cannot Be Showcased</div>`
+          : `<div class="project-image-placeholder">${project.placeholderText || 'Project Is Confidential & Cannot Be Showcased'}</div>`
         }
       </div>
       <h2 class="project-title">${project.title}</h2>
@@ -536,15 +581,15 @@ class PortfolioApp {
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-labelledby', `${project.id}-title`);
     modal.setAttribute('aria-modal', 'true');
-    
+
     modal.innerHTML = `
       <div class="modal-content">
         <button class="modal-close" onclick="closeModal('projectModal${project.id}')" aria-label="Close ${project.title} project modal">×</button>
         <h2 class="modal-title" id="${project.id}-title">${project.title}</h2>
         <div class="modal-image-container">
-          ${project.hasImage 
+          ${project.hasImage
             ? `<img src="${project.image}" alt="${project.title} screenshot" class="project-image" loading="lazy" />`
-            : `<div class="project-image-placeholder">Project Is Confidential & Cannot Be Showcased</div>`
+            : `<div class="project-image-placeholder">${project.placeholderText || 'Project Is Confidential & Cannot Be Showcased'}</div>`
           }
         </div>
         <div class="modal-details">
