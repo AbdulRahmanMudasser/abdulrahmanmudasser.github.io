@@ -251,10 +251,7 @@
     hyphens: auto;
   }
 
-  .email-icon {
-    height: 1.75rem !important;
-  }
-  
+
   .about-containers {
     flex-direction: row !important;
     gap: 0.75rem !important;
@@ -455,9 +452,6 @@
     font-size: 0.8rem !important;
   }
 
-  .email-icon {
-    height: 1.5rem !important;
-  }
 }
 
 /* High DPI Displays */

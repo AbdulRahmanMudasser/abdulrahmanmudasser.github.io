@@ -1,6 +1,6 @@
   
 **ABDUL RAHMAN**  
-Rahim Yar Khan, Punjab | [Email](mailto:abdulrahmanmudasser@gmail.com) | [LinkedIn](https://www.linkedin.com/in/abdul-rahman-mudasser/) | [Github](https://github.com/AbdulRahmanMudasser) | [Portfolio](https://abdulrahmanmudasser.github.io/)
+Rahim Yar Khan, Punjab | [Email](mailto:abdulrahmanmuddasser@gmail.com) | [LinkedIn](https://www.linkedin.com/in/abdul-rahman-mudasser/) | [Github](https://github.com/AbdulRahmanMudasser) | [Portfolio](https://abdulrahmanmudasser.github.io/)
 
 **SKILLS** 
 
@@ -33,7 +33,7 @@ Rahim Yar Khan, Punjab | [Email](mailto:abdulrahmanmudasser@gmail.com) | [Linked
 ---
 
 **Talloo (Part Time, Remote)**	**Australia**  
-AI & Full Stack Developer	Nov 2025 \- Present
+AI & Senior Software Engineer	Nov 2025 \- Present
 
 * Building AI powered applications and automation workflows using modern frameworks and tools.
 
